@@ -75,7 +75,7 @@ Developed a suite of visualizations to uncover hidden trends, ensuring readabili
 
 You can view and execute this project directly in your browser using Google Colab.
 
-1. **Open in Colab:** [Click here to open the notebook](https://colab.research.google.com/drive/1-RsWN9gCbrfdsa45lXCkfSNFb-kUhFa-?usp=sharing)
+1. **Open in Colab:** [Click here to open the notebook](https://colab.research.google.com/drive/1b2NnHOm52CeE68JkQC225A5vP9ZD1suW?usp=sharing)
 2. **Download the Data:** Download `hotel_bookings.csv` from Kaggle.
 3. **Execute:** Run the first cell to upload the CSV, then execute the notebook sequentially. 
 
