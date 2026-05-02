@@ -1,4 +1,4 @@
-# 🏨 Hotel Booking Demand: Data Analysis & Feature Engineering
+# 🏨 Assignment 1 (based on Hotel Booking Demand Dataset)
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![Jupyter Notebook](https://img.shields.io/badge/Tools-Jupyter_Notebook-orange.svg)](https://jupyter.org/)
