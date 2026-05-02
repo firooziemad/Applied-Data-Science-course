@@ -83,10 +83,9 @@ You can view and execute this project directly in your browser using Google Cola
 
 ## 📁 Project Structure
 ```text
-├── README.md                  <- The top-level README for developers using this project.
+├── README.md                    <- The top-level README for developers using this project.
 ├── hotel_booking_analysis.ipynb <- Main Jupyter Notebook containing all code, outputs, and markdown.
-└── dataset/
-    └── hotel_bookings.csv     <- Raw dataset (Ensure this is uploaded before running the notebook)
+└── hotel_bookings.csv           <- Raw dataset (Ensure this is uploaded before running the notebook)
 ```
 
 ---
