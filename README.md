@@ -5,8 +5,6 @@
 [![Colab](https://img.shields.io/badge/Platform-Google_Colab-F9AB00.svg)](https://colab.research.google.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-> A comprehensive end-to-end data science project focused on Exploratory Data Analysis (EDA), advanced data visualization, and rigorous feature engineering using the industry-standard Hotel Booking Demand dataset.
-
 ---
 
 ## 📑 Table of Contents
