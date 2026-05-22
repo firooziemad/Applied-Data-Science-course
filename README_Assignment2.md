@@ -73,7 +73,6 @@ The objective is to solve three distinct business problems: predicting room pric
 You can view and execute this project directly in your browser using Google Colab.
 
 1. **Open in Colab:** [Click here to open the notebook](https://colab.research.google.com/drive/1SHNlmlxz6dQZUkF5BYb0-X9ODVRbObVp?usp=sharing)
-2. **Hardware Acceleration:** Ensure your Colab runtime is set to **T4 GPU** to allow the XGBoost and CatBoost models to train efficiently.
 3. **Download the Data:** Download `hotel_bookings.csv` from Kaggle and upload it to the Colab session storage.
 4. **Execute:** Run the notebook sequentially from Part 1 to Part 3. 
 
