@@ -1,79 +1,112 @@
-# 🏨 Assignment 2: Machine Learning & Predictive Modeling (Hotel Booking Demand)
-
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![Jupyter Notebook](https://img.shields.io/badge/Tools-Jupyter_Notebook-orange.svg)](https://jupyter.org/)
-[![Colab](https://img.shields.io/badge/Platform-Google_Colab-F9AB00.svg)](https://colab.research.google.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+# 🏢 Assignment 3: Applied Deep Learning & Neural Architectures
 
 ---
 
 ## 📑 Table of Contents
-- [Project Overview](#-project-overview)
-- [Key Components](#-key-components)
-- [Technologies & Libraries](#-technologies--libraries)
-- [Highlight Insights](#-highlight-insights)
-- [How to Run](#-how-to-run)
-- [Project Structure](#-project-structure)
-- [Author](#-author)
+
+* [Project Overview](https://www.google.com/search?q=%23-project-overview)
+* [Key Components](https://www.google.com/search?q=%23-key-components)
+* [Technologies & Libraries](https://www.google.com/search?q=%23-technologies--libraries)
+* [Highlight Insights](https://www.google.com/search?q=%23-highlight-insights)
+* [How to Run](https://www.google.com/search?q=%23-how-to-run)
+* [Project Structure](https://www.google.com/search?q=%23-project-structure)
+* [Author](https://www.google.com/search?q=%23-author)
 
 ---
 
 ## 🚀 Project Overview
-This repository contains the second phase of the Hotel Booking Demand project. Building upon the exploratory data analysis and feature engineering from Assignment 1, this assignment focuses on deploying a comprehensive suite of Machine Learning algorithms. 
 
-The objective is to solve three distinct business problems: predicting room prices (Regression), forecasting future pricing trends (Time-Series), anticipating customer cancellations (Binary Classification), and segmenting audiences (Multiclass Classification).
+This repository contains a comprehensive exploration of modern Deep Learning architectures using **PyTorch**. The project transitions from foundational neural networks to advanced sequence and spatial modeling, demonstrating how different network topologies solve distinct data problems.
 
-**Dataset Source:** [Kaggle - Hotel Booking Demand](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand)
+The objective is to master four core deep learning paradigms across three unique datasets: predicting employee attrition and income via Multilayer Perceptrons (MLPs), classifying natural scenes using Convolutional Neural Networks (CNNs), forecasting weather time-series data with Recurrent Neural Networks (RNNs), and implementing self-attention mechanisms via Transformers.
+
+**Dataset Sources:**
+
+1. IBM HR Analytics Employee Attrition & Performance
+2. Intel Image Classification (Natural Scenes)
+3. Daily Climate Time Series Data (Delhi)
 
 ---
 
 ## 🧩 Key Components
 
-### 1. Regression & Time-Series Forecasting
-* **Price Prediction (ADR):** Evaluated 10 different regression models including Linear, Ridge, LASSO, SVR, and Distance-Weighted KNN to predict the Average Daily Rate.
-* **Advanced Error Analysis:** Utilized business-centric metrics (MAE, MedAE) alongside robust statistical metrics (Huber Loss, MSLE) to evaluate model performance against extreme pricing outliers.
-* **Temporal Forecasting:** Engineered chronological datasets to forecast future weekly prices using ARIMA, Seasonal ARIMA (SARIMA), and Hidden Markov Models (HMM).
+### 1. Multilayer Perceptrons (MLP) & Network Tuning
 
-### 2. Binary Classification
-* **Cancellation Prediction:** Trained and cross-validated Logistic Regression, Kernel SVM, Decision Trees, and Naive Bayes to predict booking cancellations.
-* **Hyperparameter Tuning:** Utilized K-Fold Cross-Validation to optimize tree depth and nearest-neighbor constraints.
-* **Information Theory Metrics:** Evaluated models using advanced metrics ideal for imbalanced datasets, including PR-AUC, Cross-Entropy (Log Loss), and Jensen-Shannon Divergence.
-* **Visual Error Analysis:** Generated interactive ROC/PR curves and Confusion Matrix heatmaps to analyze the business cost of False Negatives.
+* **Classification & Regression:** Built custom MLPs to predict binary employee attrition and continuous monthly income.
+* **Hyperparameter Optimization:** Conducted systematic experiments on optimizers (SGD, Adam), learning rate scheduling (`ReduceLROnPlateau`), and batch size variations to navigate the loss landscape.
+* **Regularization & Stability:** Implemented Early Stopping, Dropout, L1/L2 Weight Decay, Gradient Clipping, and Batch Normalization to combat severe overfitting observed in deep, unregularized networks.
 
-### 3. Multiclass & Boosting Ensembles
-* **Customer Segmentation:** Deployed state-of-the-art boosting algorithms to categorize bookings into 4 distinct Customer Types (Transient, Group, Contract, etc.).
-* **Advanced Ensembles:** Implemented XGBoost, LightGBM, and CatBoost, alongside meta-learners like Stacking and Hard/Soft Voting Classifiers.
-* **Imbalance Handling:** Evaluated models strictly using Macro F1-Scores and Cohen's Kappa to ensure minority classes (like "Group" bookings) were not statistically ignored by the models.
+### 2. Convolutional Neural Networks (CNN) & Computer Vision
+
+* **Spatial Feature Extraction:** Designed scratch-built CNNs to classify 150x150 RGB images into 6 natural scene categories.
+* **Architectural Experiments:** Evaluated the computational and predictive impacts of varying kernel sizes, strides, pooling mechanisms, and network depth.
+* **Data Augmentation & Transfer Learning:** Mitigated spatial overfitting using random flips, rotations, and color jitter. Deployed a pre-trained **ResNet-18** backbone as a feature extractor, vastly outperforming custom architectures.
+
+### 3. Recurrent Neural Networks (RNN) & Sequence Modeling
+
+* **Time-Series Forecasting:** Formatted daily climate data into 3D sliding-window tensors to predict future mean temperatures.
+* **Architecture Showdown:** Trained and compared Vanilla RNN, LSTM, and GRU models to evaluate memory capacity and gradient flow over short sequences.
+* **Advanced RNN Configurations:** Tested bidirectional processing, inter-layer dropout, and varied hidden states/depths to optimize sequence representations.
+
+### 4. Transformers & Attention Mechanisms
+
+* **Parallel Sequence Processing:** Implemented a custom `TimeSeriesTransformer` using PyTorch's native `TransformerEncoder` to bypass the sequential bottlenecks of RNNs.
+* **Attention vs. Recurrence:** Integrated Positional Encoding and Multi-Head Attention to map global temporal context ($O(1)$ dependency path), comparing its convergence stability and computational footprint directly against the LSTM baseline.
 
 ---
 
 ## 🛠 Technologies & Libraries
 
 | Category | Tools/Libraries |
-| :--- | :--- |
+| --- | --- |
 | **Language** | Python |
+| **Deep Learning Framework** | PyTorch (`torch`, `torch.nn`, `torch.optim`) |
+| **Computer Vision** | TorchVision (`datasets`, `transforms`, `models`) |
 | **Data Manipulation** | Pandas, NumPy |
-| **Visualization** | Matplotlib, Seaborn, Plotly |
-| **Standard Machine Learning** | Scikit-Learn (`LinearSVC`, `DecisionTrees`, `StackingClassifier`, etc.) |
-| **Advanced Boosting** | XGBoost, LightGBM, CatBoost |
-| **Time-Series & Stats** | Statsmodels (`SARIMAX`), `hmmlearn`, SciPy |
+| **Visualization** | Matplotlib, Seaborn, Plotly (`graph_objects`, `subplots`) |
+| **Preprocessing & Metrics** | Scikit-Learn (`StandardScaler`, `accuracy_score`, `f1_score`, `confusion_matrix`, etc.) |
 
 ---
 
 ## 💡 Highlight Insights
-1. **The Curse of Dimensionality:** Highly sparse, One-Hot Encoded data heavily handicapped standard linear models and Kernel SVMs (due to $O(n^2)$ memory scaling). Tree-based models and Locally Weighted KNN vastly outperformed them on this specific dataset.
-2. **The Business Cost of Accuracy:** While Random Forests achieved the highest raw accuracy for cancellations, Decision Trees proved better for actual deployment by minimizing False Negatives (missing a cancellation), which is the most expensive error in the hospitality industry.
-3. **LightGBM's Imbalance Mastery:** In the multiclass task, LightGBM dominated the traditional linear models and standard ensembles, yielding the highest Macro F1-Score while training in seconds, proving the power of histogram-based gradient boosting on imbalanced data.
-4. **Time-Series Realities:** SARIMA forecasting captured the highly cyclical summer-spikes of the hotel industry perfectly, whereas the Hidden Markov Model (HMM) demonstrated how probabilistic transitions naturally settle into a smooth, steady-state average over long horizons.
+
+1. **The Cost of Capacity:** Across both MLPs and CNNs, arbitrarily increasing network depth and width without corresponding regularization (like Dropout or Batch Norm) immediately resulted in catastrophic memorization and divergent validation loss.
+2. **Transfer Learning Dominance:** In the image classification task, transferring ImageNet weights via a frozen ResNet-18 backbone bypassed the need for massive local compute, instantly jumping to an 85%+ accuracy in Epoch 1 by leveraging pre-learned universal textures.
+3. **RNN Resiliency on Short Sequences:** While LSTMs and GRUs are essential for long-term dependencies, Vanilla RNNs proved highly competitive—and computationally lighter—when restricted to short 7-day forecasting windows where the vanishing gradient problem is negligible.
+4. **Transformer Attention Dynamics:** The Transformer encoder successfully mapped temporal relationships in parallel, but early training exhibited micro-oscillations in validation loss because it lacks the built-in chronological inductive bias of LSTMs and must learn the concept of "time" entirely from positional sine waves.
 
 ---
 
 ## 💻 How to Run
 
-You can view and execute this project directly in your browser using Google Colab.
+You can view and execute this project directly in your browser using Google Colab or locally via Jupyter.
 
-1. **Open in Colab:** [Click here to open the notebook](https://colab.research.google.com/drive/1SHNlmlxz6dQZUkF5BYb0-X9ODVRbObVp?usp=sharing)
-3. **Download the Data:** Download `hotel_bookings.csv` from Kaggle and upload it to the Colab session storage.
-4. **Execute:** Run the notebook sequentially from Part 1 to Part 3. 
+1. **Open the Environment:** Launch the Jupyter Notebook locally or open it in Google Colab. Ensure hardware acceleration (GPU/CUDA) is enabled.
+2. **Download the Data:** Ensure the following files/directories are placed in the same working directory as the notebook:
+* `WA_Fn-UseC_-HR-Employee-Attrition.csv`
+* `seg_train/` and `seg_test/` (Intel Image folders)
+* `DailyDelhiClimateTrain.csv` and `DailyDelhiClimateTest.csv`
+
+
+3. **Execute:** Run the notebook sequentially from Part 0 through Part 4. The modular training loops will automatically manage GPU memory (`torch.cuda.empty_cache()`) between experiments.
 
 ---
+
+## 📁 Project Structure
+
+```text
+├── README.md                               <- Top-level README for this assignment.
+├── Assignment_3_Deep_Learning.ipynb        <- Main Jupyter Notebook containing all DL pipelines.
+├── WA_Fn-UseC_-HR-Employee-Attrition.csv   <- Raw HR dataset.
+├── DailyDelhiClimateTrain.csv              <- Training split for time-series.
+├── DailyDelhiClimateTest.csv               <- Testing split for time-series.
+└── seg_train/ & seg_test/                  <- Extracted image directories for CNN training.
+
+```
+
+---
+
+## 👤 Author
+
+**Emad Firoozi**
+Course: Applied Data Science
